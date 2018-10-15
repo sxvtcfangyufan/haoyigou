@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="ZH-cn">
+
+	<head>
+		<meta charset="UTF-8">
+		<meta name="keyword" content="" />
+		<meta name="description" content="" />
+		<title>购物车</title>
+		<link rel="stylesheet" type="text/css" href="css/normalize.css" />
+		<link rel="stylesheet" href="css/cart.css">
+		<link rel="stylesheet" href="css/index.css">
+	</head>
+
+	<body>
+		<div id="g_header_top">
+			<div class="w1000">
+				<div class="header_top_left">
+					<span>欢迎来到欢乐购!</span>
+					<a href="" class="login">[登录]</a>
+					<span class="line">|</span>
+					<a href="" class="register">[注册]</a>
+				</div>
+				<div class="header_top_right">
+					<ul>
+						<li>
+							<a href="">合作招商</a><span class="line"></span></li>
+						<li>
+							<a href="">订单查询</a><span class="line"></span></li>
+						<li>
+							<a href="">我的欢乐购</a><span class="line"></span></li>
+						<li><i class="tel_icon"></i><span style="margin-right: 10px;">400-705-1111</span><span class="line"></span></li>
+						<li>
+							<a href="">下载欢乐购</a><span class="line"></span></li>
+						<li>
+							<a href="">客服中心</a><i class="i_down"></i></li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<div id="g_logo">
+			<div class="w1000">
+				<div class="g_left"><a href="#"><img src="images/logo.jpg" /></a></div>
+				<div class="g_right">
+					<div class="g_status"></div>
+				</div>
+			</div>
+		</div>
+		<div id="g_main">
+			<div class="w1000">
+				<div class="good_main">
+					<img src="http://ecimg.happigo.com/resource/web/images/car_no_goods.jpg"/>
+					<div class="no_goods">
+            			<p class="no_goods_t">亲，您的购物车空空如也，快去抢购心仪商品吧~</p>
+            			<p><a href="#" class="no_goods_buy">立即购买</a></p>
+        			</div>
+				</div>
+				<div class="goods_main">
+					<form action="#" class="goods_form">
+						<div class="t_check">
+							<input type="checkbox" />
+							<label>全选</label>							
+						</div>
+						<div class="t_goodsname">商品</div>						
+                		<div class="t_price">单价(元)</div>
+                		<div class="t_quantity">数量</div>
+                		<div class="t_sum">小计(元)</div>
+                		<div class="t_action">操作</div>           
+					</form>
+					<div class="goods_list">
+						<div class="shop_h2">
+                			<!-- <span class="s_allgoods">
+                        		<input type="checkbox" class="jdcheckbox" value="1" checked>
+                    		</span> -->
+                    		<span class="shop_zy"><span>自营</span></span>                    
+                    		<a class="shopname" href="#">快乐购商城</a>                                                                
+                    		<div class="order_tips">在线支付满129.00包邮</div>
+                        </div>
+						<div class="item_list">
+							<div class="cart_item">
+								<div class="cell p_checkbox">
+									<input type="checkbox" id="checkbox"/>
+								</div>
+								<div class="cell p_goods">
+									<div class="p_img">
+										<a href="#"><img src=""/></a>
+									</div>
+									<div class="p_goodsname">
+										<a href="#">阿拉斯加野生进口鳕鱼 500g*9袋</a>
+									</div>
+								</div>
+								<div class="cell p_price">
+									<p class="sp_sum">￥398.00</p>
+								</div>
+								<div class="cell p_quantity">
+									<a href="javascript:;" class="quantityred">-</a>
+									<input type="" name="" id="" value="1" />
+									<a href="javascript:;" class="quantityadd">+</a>
+								</div>
+								<div class="cell p_sum">
+									<strong>￥<em class="sps_sum">796.00</em></strong>
+								</div>
+								<div class="cell p_ops">
+									<a href="#">删除</a>
+								</div>								
+							</div>							
+						</div>
+						<div class="list_sum">
+							<div class="t_check">
+								<input type="checkbox" />
+								<label>全选</label>							
+							</div>
+							<div class="list_sum_num">
+								<div class="goods_num">已选商品<em class="sunm">2</em>件</div>
+								<div class="goods_sum">
+	                            	商品总价（不含运费）
+	                            	<span>￥<i class="cart_total">1065.00</i></span>
+	                        	</div>
+	                        	<div class="btn_buy">
+	                            <a href="#" class="a_btn_buy">去结算</a>
+	                        </div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!--<div class="guess_like">
+					<ul class="guess_h2">
+						<li>猜你喜欢</li>
+					</ul>
+					<div class="guess_details">
+						<div class="noguess">暂无商品向您推荐</div>
+					</div>
+				</div>-->
+			</div>
+		</div>
+		<div id="footer"></div>
+		<!--<script src="script/thirdplugins/jquery.js" type="text/javascript"></script>
+		<script src="script/js/index.js" type="text/javascript"></script>-->
+		<script src="script/thirdplugins/require.js" type="text/javascript"  defer async="true" data-main="script/js/main.js"></script>
+	</body>
+
+</html>

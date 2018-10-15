@@ -1,0 +1,230 @@
+@charset "utf-8";
+@mixin w1000($width:1000px) {
+    width: $width;
+    margin: 0 auto;
+}
+
+@mixin clearfix() {
+    &:after {
+        content: " ";
+        display: table;
+        clear: both;
+    }
+}
+
+@mixin left($float:left) {
+    float: $float;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    font-size: 12px;
+}
+
+#login_header {
+    width: 100%;
+    .w1000 {
+        @include w1000();
+        @include clearfix();
+        margin-top: 30px;
+        margin-bottom: 19px;
+    }
+    .r_h_logo {
+        @include left();
+        width: 74px;
+        margin-right: 7px;
+    }
+    .r_h_right {
+        float: right;
+        margin-top: 19px;
+    }
+}
+
+#login_middle {
+    height: 600px;
+    .w1000 {
+        @include w1000($width: 980px);
+        @include clearfix();
+    }
+    .l_m_l {
+        @include left();
+        width: 600px;
+        padding-top: 23px;
+    }
+    .l_m_r {
+        @include left();
+        width: 367px;
+        height: 600px;
+        background: url(../images/login_icon_list.png) 0 -115px no-repeat;
+    }
+    .r_mid {
+        padding: 0 25px;
+    }
+    .login_title {
+        padding-top: 23px;
+        padding-bottom: 20px;
+        @include clearfix();
+        h2 {
+            color: #c41f3a;
+            font-size: 22px;
+            height: 38px;
+            line-height: 38px;
+            font-weight: bold;
+            @include left();
+        }
+        .logintop {
+            @include left($float: right);
+            height: 38px;
+            line-height: 38px;
+            color: #8C8C8C;
+            a {
+                color: #c41f3a;
+            }
+        }
+    }
+    .checkbox {
+        padding: 0 0 10px 0;
+        text-align: left;
+    }
+    .radio {
+        padding-right: 45px;
+        label {
+            padding-left: 5px;
+        }
+    }
+    .qh,
+    .qh1 {
+        .login_item {
+            margin-bottom: 10px;
+            width: 100%;
+            @include clearfix();
+            
+            input {
+                color: #333333;
+                border: 1px solid #c8c8c8;
+                height: 25px;
+                line-height: 25px;
+                padding: 6px 0 6px 6px;
+                width: 293px;
+                font-size: 12px;
+            }
+            .getyzm {
+                margin-left: 17px;
+                color: #444444;
+                font-family: "宋体";
+                font-weight: bold;
+                font-size: 12px;
+                text-align: center;
+                display: inline-block;
+                border: 1px solid #c8c8c8;
+                width: 117px;
+                height: 38px;
+                line-height: 38px;
+                vertical-align: top;
+                text-decoration: none;
+                background: #f2f2f2;
+            }
+            .error {
+                height: 23px;
+                line-height: 23px;
+                margin-bottom: 3px;
+                overflow: hidden;
+                width: 100%;
+                color: #8c8c8c;
+            }
+            .remeber {
+                padding-top: 5px;
+                color: #767676;
+                @include left();
+                input {
+                    width: 13px;
+                    height: 13px;
+                }
+            }
+            .forgetpass {
+                @include left($float: right);
+                padding-right: 26px;
+                padding-top: 3px;
+                a {
+                    color: #8c8c8c;
+                    text-decoration: none;
+                }
+            }
+        }
+        .login_yzm {
+            a {
+                color: #8c8c8c;
+                text-decoration: none;
+            }
+        }
+        .login_button {
+            width: 310px;
+            height: 40px;
+            color: #fff;
+            line-height: 40px;
+            background-color: #94193f;
+            text-align: center;
+            font-size: 14px;
+            font-family: "宋体";
+            font-weight: bold;
+            border: 0;
+        }
+        .login_way {
+            h5 {
+                color: #333;
+                height: 24px;
+                line-height: 24px;
+                font-size: 12px;
+                font-family: "宋体";
+            }
+            ul {
+                margin-top: 10px;
+                list-style: none;
+                @include clearfix();
+                li {
+                    margin-right: 10px;
+                    @include left();
+                    a {
+                        text-indent: -999em;
+                        display: block;
+                        width: 50px;
+                        height: 50px;
+                        background: url(../images/login_icon_list.png) 0 0;
+                    }
+                }
+                .qq {
+                    background-position: 0 -32px;
+                }
+                .weibo {
+                    background-position: -74px -32px;
+                }
+                .zfb {
+                    background-position: -143px -32px;
+                }
+            }
+        }
+    }
+}
+
+#login_fixed {
+    position: fixed;
+    top: 50%;
+    right: 50%;
+    margin-right: -515px;
+    margin-top: -135px;
+}
+
+#login_bottom {
+    .w1000 {
+        @include w1000();
+        p {
+            padding-top: 10px;
+            text-align: center;
+            font-family: "宋体";
+            color: #7e7e7e;
+            font-size: 12px;
+            line-height: 25px;
+        }
+    }
+}

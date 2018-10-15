@@ -23,10 +23,10 @@
   display: table;
   clear: both;
 }
-#header .w1000 .header_top_left {
+#header .w1000 .header_top_left, #header .w1000 .header_top_hide {
   float: left;
 }
-#header .w1000 .header_top_left a {
+#header .w1000 .header_top_left a, #header .w1000 .header_top_hide a {
   color: #8c8c8c;
   padding: 0 10px 0 20px;
 }
@@ -49,6 +49,21 @@
   width: 1px;
   display: inline-block;
   vertical-align: middle;
+}
+#header .w1000 .header_top_right .tel_icon {
+  background: url(../images/icon_list.png) no-repeat 0 -38px;
+  width: 14px;
+  height: 13px;
+  margin: 0 4px 0 10px;
+  display: inline-block;
+  vertical-align: middle;
+}
+#header .w1000 .header_top_right .i_down {
+  background: url(../images/icon_list.png) no-repeat scroll -157px -696px;
+  height: 6px;
+  width: 10px;
+  margin-left: 5px;
+  display: inline-block;
 }
 #header .header_mid {
   width: 1000px;
@@ -83,6 +98,7 @@
 #header .header_mid .search .s_input {
   height: 35px;
   border: 3px solid #94193f;
+  position: relative;
 }
 #header .header_mid .search .s_input .sch {
   border: none;
@@ -99,6 +115,30 @@
   color: #fff;
   float: left;
   height: 35px;
+}
+#header .header_mid .search .s_input ul {
+  width: 304px;
+  display: none;
+  position: absolute;
+  background: #fff;
+  top: 38px;
+  left: -3px;
+  list-style: none;
+  z-index: 99999999;
+}
+#header .header_mid .search .s_input ul li {
+  height: 15px;
+  line-height: 15px;
+  padding-left: 12px;
+  background-color: #94193f;
+  overflow: hidden;
+  cursor: pointer;
+}
+#header .header_mid .search .s_input ul li a {
+  color: #fff;
+  font-family: "宋体";
+  font-weight: bold;
+  float: left;
 }
 #header .header_mid .search .keyword {
   margin-top: 4px;
@@ -133,6 +173,26 @@
 }
 #header .header_mid .gwc .car span {
   color: #666;
+}
+#header .header_mid .gwc .car b {
+  display: block;
+  background: url(../images/icon_list.png) no-repeat;
+}
+#header .header_mid .gwc .car .b1 {
+  float: left;
+  margin-left: 5px;
+  width: 21px;
+  height: 15px;
+  margin-top: 12px;
+  background-position: -184px -736px;
+}
+#header .header_mid .gwc .car .b2 {
+  float: right;
+  background-position: -270px -737px;
+  height: 11px;
+  margin-right: 7px;
+  margin-top: 14px;
+  width: 13px;
 }
 #header .header_fot {
   border-bottom: 2px solid #94193f;
@@ -182,6 +242,7 @@
   width: 215px;
   height: 380px;
   position: relative;
+  z-index: 50;
   background: url(../images/index_type_bg.png?v=1);
 }
 #header .nav .type ul {
@@ -225,6 +286,7 @@
 #header .nav .type .tul {
   display: none;
   position: absolute;
+  z-index: 50;
   left: 215px;
   width: 370px;
   background-color: #fff;
@@ -274,20 +336,74 @@
   background: #fbfbfb;
 }
 
+.click_on {
+  border-right: 2px solid #c4193f;
+  border-left: 2px solid #c4193f;
+  border-top: 2px solid #c4193f;
+  border-bottom: 2px solid #fff;
+}
+
 /*轮播图*/
 #slide {
+  width: 100%;
+  overflow: hidden;
+  height: 380px;
+  position: relative;
+}
+#slide ul {
+  width: 100%;
+  overflow: hidden;
   height: 380px;
 }
-#slide img {
+#slide ul li {
+  opacity: 0;
+  left: -318.5px;
+  position: absolute;
+}
+#slide ul li:nth-of-type(1) {
+  opacity: 1 !important;
+}
+#slide ul li img {
   height: 100%;
+}
+#slide ul .on_li {
+  opacity: 1;
+}
+#slide .slide_btn {
+  bottom: 10px;
+  height: 28px;
+  left: 0;
+  overflow: hidden;
+  position: absolute;
+  text-align: center;
   width: 100%;
+}
+#slide .slide_btn .btn_all {
+  margin: 0 auto;
+  padding: 0 20px;
+  background: url("http://ecimg.happigo.com/resource/web/images/big_eye_bg.png?v=1") repeat;
+  width: 75px;
+  height: 28px;
+  line-height: 28px;
+  border-radius: 15px;
+}
+#slide .slide_btn .btn_all span {
+  cursor: pointer;
+  width: 11px;
+  height: 11px;
+  display: inline-block;
+  margin: 7.5px 5px;
+  background-color: #fff;
+  border-radius: 5px;
+}
+#slide .slide_btn .btn_all .on {
+  background: #cc2256;
 }
 
 /*限时*/
 #time_area {
   width: 1000px;
   margin: 0 auto;
-  height: 370px;
   margin-top: 40px;
   background: #fff;
 }
@@ -321,6 +437,14 @@
   z-index: 9;
   line-height: 48px;
 }
+#time_area .time_title ul .zb_icon_down {
+  position: absolute;
+  bottom: -1px;
+  width: 100%;
+  height: 3px;
+  background-color: #000;
+  left: 0%;
+}
 #time_area .time_title ul .tv {
   border-radius: 15px;
   color: #fff;
@@ -339,6 +463,129 @@
   background: url(../images/icon_list.png) no-repeat -183px -488px;
   width: 18px;
   height: 24px;
+}
+#time_area .time_content {
+  padding: 10px 28px 0 28px;
+  position: relative;
+}
+#time_area .time_content .time_gro {
+  width: 930px;
+  margin-left: 7px;
+  position: relative;
+  overflow: hidden;
+}
+#time_area .time_content .time_ul {
+  width: 5394px;
+  position: relative;
+  overflow: hidden;
+}
+#time_area .time_content .time_ul:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#time_area .time_content .time_ul li {
+  float: left;
+  list-style: none;
+  width: 180px;
+  margin: 4px 0px;
+  border: 3px solid #fff;
+  position: relative;
+}
+#time_area .time_content .time_ul li:hover {
+  border: 3px solid #c4193f;
+  transition: all 0.3s ease-in 0s;
+}
+#time_area .time_content .time_ul .last_time {
+  background: url("http://ecimg.happigo.com/resource/web/images/icon_list.png?v=1") repeat scroll -1px -350px;
+  color: #fff;
+  height: 27px;
+  left: 0;
+  line-height: 27px;
+  position: absolute;
+  top: 0;
+  width: 61px;
+  text-align: center;
+}
+#time_area .time_content .time_ul .last_time .time_icon {
+  background: url("http://ecimg.happigo.com/resource/web/images/icon_list.png?v=1") repeat scroll -168px -305px;
+  display: block;
+  float: left;
+  height: 23px;
+  width: 26px;
+}
+#time_area .time_content .time_ul .pro {
+  width: 180px;
+  height: 180px;
+}
+#time_area .time_content .time_ul .pro img {
+  width: 100%;
+}
+#time_area .time_content .time_ul .p_num {
+  color: #787878;
+  padding: 0 5px;
+  font-family: "宋体";
+  height: 1.4em;
+  line-height: 1.4em;
+  overflow: hidden;
+  margin-top: 10px;
+}
+#time_area .time_content .time_ul .p_jj {
+  height: 2.8em;
+  line-height: 1.4em;
+  overflow: hidden;
+  padding: 0px 5px 0px 5px;
+  margin-top: 5px;
+}
+#time_area .time_content .time_ul .p_jj span {
+  color: #000;
+}
+#time_area .time_content .time_ul .now_price {
+  color: #969696;
+  height: 30px;
+  line-height: 30px;
+  padding: 10px 5px 5px 5px;
+}
+#time_area .time_content .time_ul .now_price span {
+  color: #c4193f;
+  font-size: 20px;
+}
+#time_area .time_content .time_ul .now_price del {
+  text-decoration: line-through;
+}
+#time_area .time_content .csyc {
+  display: none;
+}
+#time_area .time_content .hd {
+  display: block;
+}
+#time_area .time_content .hd a {
+  position: absolute;
+  top: 72px;
+  width: 30px;
+  height: 70px;
+  background-color: #575757;
+  text-align: center;
+  cursor: pointer;
+}
+#time_area .time_content .hd a i {
+  background: url("http://ecimg.happigo.com/resource/web/images/icon_list.png?v=1");
+  display: block;
+  height: 31px;
+  width: 14px;
+  margin: 19px 0 0 8px;
+}
+#time_area .time_content .hd a .hd_right {
+  background-position: -221px -346px;
+}
+#time_area .time_content .hd a .hd_left {
+  background-position: -120px -344px;
+}
+#time_area .time_content .hd .hdl {
+  left: 0;
+}
+#time_area .time_content .hd .hdr {
+  right: 0;
 }
 
 /*抢购*/
@@ -380,7 +627,7 @@
 #grap_area .clock li {
   float: left;
   position: relative;
-  height: 37px;
+  height: 35px;
 }
 #grap_area .clock li a {
   padding: 0 12px;
@@ -388,11 +635,127 @@
   height: 35px;
   line-height: 35px;
   margin-left: 0px;
+  font-size: 14px;
+  color: #434343;
+}
+#grap_area .clock .clock_on {
   border-right: 2px solid #c4193f;
   border-left: 2px solid #c4193f;
   border-top: 2px solid #c4193f;
-  font-size: 14px;
-  color: #434343;
+  border-bottom: 2px solid #fff;
+}
+#grap_area .grap_content {
+  margin-top: 20px;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+#grap_area .grap_content .grop {
+  height: 331px;
+  display: none;
+}
+#grap_area .grap_content .grop_on {
+  display: block;
+}
+#grap_area .grap_content .grop_temp {
+  overflow: hidden;
+  position: relative;
+  width: 1010px;
+}
+#grap_area .grap_content .grop_ul {
+  width: 1616px;
+  left: 0px;
+  position: relative;
+  overflow: hidden;
+  padding: 0px;
+  margin: 0px;
+}
+#grap_area .grap_content .grop_ul li {
+  float: left;
+  list-style: none;
+  width: 192px;
+  margin-right: 10px;
+}
+#grap_area .grap_content .grop_ul li img {
+  width: 100%;
+}
+#grap_area .grap_content .grop_ul .x_g {
+  height: 80px;
+}
+#grap_area .grap_content .grop_ul .g_p1 {
+  color: #999999;
+  font-size: 13px;
+  height: 20px;
+  line-height: 20px;
+  overflow: hidden;
+}
+#grap_area .grap_content .grop_ul .g_p2 {
+  color: #333;
+  line-height: 1.4em;
+}
+#grap_area .grap_content .grop_ul .g_ljqg {
+  border: 1px solid #c4193f;
+  height: 33px;
+  line-height: 33px;
+}
+#grap_area .grap_content .grop_ul .g_ljqg:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#grap_area .grap_content .grop_ul .g_ljqg a {
+  float: right;
+  height: 33px;
+  background: #c4193f;
+  text-align: center;
+  color: #fff;
+  font-size: 16px;
+  width: 81px;
+}
+#grap_area .grap_content .grop_ul .qg_price {
+  float: left;
+  height: 33px;
+  width: 107px;
+}
+#grap_area .grap_content .grop_ul .qg_price span {
+  color: #c4193f;
+  padding-left: 6px;
+  font-size: 16px;
+}
+#grap_area .grap_content .grop_ul .qg_price del {
+  color: #969696;
+  text-decoration: line-through;
+}
+#grap_area .grap_content .hd {
+  display: block;
+}
+#grap_area .grap_content .hd a {
+  position: absolute;
+  top: 72px;
+  width: 30px;
+  height: 70px;
+  background-color: #575757;
+  text-align: center;
+  cursor: pointer;
+}
+#grap_area .grap_content .hd a i {
+  background: url("http://ecimg.happigo.com/resource/web/images/icon_list.png?v=1");
+  display: block;
+  height: 31px;
+  width: 14px;
+  margin: 19px 0 0 8px;
+}
+#grap_area .grap_content .hd a .hd_right {
+  background-position: -221px -346px;
+}
+#grap_area .grap_content .hd a .hd_left {
+  background-position: -120px -344px;
+}
+#grap_area .grap_content .hd .hdl {
+  left: 0;
+}
+#grap_area .grap_content .hd .hdr {
+  right: 0;
 }
 
 /*新品推荐*/
@@ -448,7 +811,7 @@
   clear: both;
 }
 #new_area .new_content .new_ul li {
-  width: 186px;
+  width: 183px;
   margin-right: 10px;
   height: 274px;
   float: left;
@@ -464,37 +827,34 @@
 #new_area .new_content .new_ul li img {
   width: 100%;
 }
-#new_area .new_content .new_ul .last_li {
-  margin-right: 0px;
-}
-#new_area .new_content .new_ul .new_title_a {
+#new_area .new_content .new_ul li .new_title_a {
   display: block;
   cursor: pointer;
 }
-#new_area .new_content .new_ul .new_title_a .p1 {
+#new_area .new_content .new_ul li .new_title_a .p1 {
   padding: 3px 10px 0;
   color: #999;
 }
-#new_area .new_content .new_ul .new_title_a .p2 {
+#new_area .new_content .new_ul li .new_title_a .p2 {
   color: #333;
   padding: 5px 10px 0;
 }
-#new_area .new_content .new_ul .new_price {
+#new_area .new_content .new_ul li .new_price {
   margin-top: 3px;
   padding: 0 10px;
 }
-#new_area .new_content .new_ul .new_price:after {
+#new_area .new_content .new_ul li .new_price:after {
   content: " ";
   display: table;
   clear: both;
 }
-#new_area .new_content .new_ul .new_price .price1 {
+#new_area .new_content .new_ul li .new_price .price1 {
   color: #c4193f;
   font-size: 22px;
   float: left;
   margin-left: -3px;
 }
-#new_area .new_content .new_ul .new_price .price2 {
+#new_area .new_content .new_ul li .new_price .price2 {
   color: #969696;
   font-size: 14px;
   padding: 8px 0 0 10px;
@@ -541,26 +901,26 @@
 }
 
 /*个性美妆*/
-#beauty_area {
+#beauty_area, #food_area, #day_area, #cloth_area, #home_area, #household_area {
   width: 1000px;
   margin: 0 auto;
   margin-top: 40px;
   height: 780px;
 }
-#beauty_area:after {
+#beauty_area:after, #food_area:after, #day_area:after, #cloth_area:after, #home_area:after, #household_area:after {
   content: " ";
   display: table;
   clear: both;
 }
-#beauty_area .beauty_title {
+#beauty_area .beauty_title, #food_area .beauty_title, #day_area .beauty_title, #cloth_area .beauty_title, #home_area .beauty_title, #household_area .beauty_title {
   width: 100%;
   text-align: left;
-  border-bottom: 1px solid #cfcfcf;
+  border-bottom: 1px solid #c4193f;
   margin-top: 0px;
   height: 40px;
   position: relative;
 }
-#beauty_area .beauty_title .beauty {
+#beauty_area .beauty_title .beauty, #food_area .beauty_title .beauty, #day_area .beauty_title .beauty, #cloth_area .beauty_title .beauty, #home_area .beauty_title .beauty, #household_area .beauty_title .beauty {
   font-size: 28px;
   padding-bottom: 4px;
   color: #333333;
@@ -568,62 +928,385 @@
   bottom: -2px;
   border-bottom: 3px solid #000;
 }
-#beauty_area .beauty_ul {
+#beauty_area .beauty_ul, #food_area .beauty_ul, #day_area .beauty_ul, #cloth_area .beauty_ul, #home_area .beauty_ul, #household_area .beauty_ul, #beauty_area .food_ul, #food_area #beauty_area .food_ul, #beauty_area #food_area .food_ul, #day_area #beauty_area .food_ul, #beauty_area #day_area .food_ul, #cloth_area #beauty_area .food_ul, #beauty_area #cloth_area .food_ul, #home_area #beauty_area .food_ul, #beauty_area #home_area .food_ul, #household_area #beauty_area .food_ul, #beauty_area #household_area .food_ul, #beauty_area #food_area .food_ul, #food_area #beauty_area .food_ul, #food_area .food_ul, #day_area #food_area .food_ul, #food_area #day_area .food_ul, #cloth_area #food_area .food_ul, #food_area #cloth_area .food_ul, #home_area #food_area .food_ul, #food_area #home_area .food_ul, #household_area #food_area .food_ul, #food_area #household_area .food_ul, #beauty_area #day_area .food_ul, #day_area #beauty_area .food_ul, #food_area #day_area .food_ul, #day_area #food_area .food_ul, #day_area .food_ul, #cloth_area #day_area .food_ul, #day_area #cloth_area .food_ul, #home_area #day_area .food_ul, #day_area #home_area .food_ul, #household_area #day_area .food_ul, #day_area #household_area .food_ul, #beauty_area #cloth_area .food_ul, #cloth_area #beauty_area .food_ul, #food_area #cloth_area .food_ul, #cloth_area #food_area .food_ul, #day_area #cloth_area .food_ul, #cloth_area #day_area .food_ul, #cloth_area .food_ul, #home_area #cloth_area .food_ul, #cloth_area #home_area .food_ul, #household_area #cloth_area .food_ul, #cloth_area #household_area .food_ul, #beauty_area #home_area .food_ul, #home_area #beauty_area .food_ul, #food_area #home_area .food_ul, #home_area #food_area .food_ul, #day_area #home_area .food_ul, #home_area #day_area .food_ul, #cloth_area #home_area .food_ul, #home_area #cloth_area .food_ul, #home_area .food_ul, #household_area #home_area .food_ul, #home_area #household_area .food_ul, #beauty_area #household_area .food_ul, #household_area #beauty_area .food_ul, #food_area #household_area .food_ul, #household_area #food_area .food_ul, #day_area #household_area .food_ul, #household_area #day_area .food_ul, #cloth_area #household_area .food_ul, #household_area #cloth_area .food_ul, #home_area #household_area .food_ul, #household_area #home_area .food_ul, #household_area .food_ul, #beauty_area .day_ul, #food_area #beauty_area .day_ul, #beauty_area #food_area .day_ul, #day_area #beauty_area .day_ul, #beauty_area #day_area .day_ul, #cloth_area #beauty_area .day_ul, #beauty_area #cloth_area .day_ul, #home_area #beauty_area .day_ul, #beauty_area #home_area .day_ul, #household_area #beauty_area .day_ul, #beauty_area #household_area .day_ul, #beauty_area #food_area .day_ul, #food_area #beauty_area .day_ul, #food_area .day_ul, #day_area #food_area .day_ul, #food_area #day_area .day_ul, #cloth_area #food_area .day_ul, #food_area #cloth_area .day_ul, #home_area #food_area .day_ul, #food_area #home_area .day_ul, #household_area #food_area .day_ul, #food_area #household_area .day_ul, #beauty_area #day_area .day_ul, #day_area #beauty_area .day_ul, #food_area #day_area .day_ul, #day_area #food_area .day_ul, #day_area .day_ul, #cloth_area #day_area .day_ul, #day_area #cloth_area .day_ul, #home_area #day_area .day_ul, #day_area #home_area .day_ul, #household_area #day_area .day_ul, #day_area #household_area .day_ul, #beauty_area #cloth_area .day_ul, #cloth_area #beauty_area .day_ul, #food_area #cloth_area .day_ul, #cloth_area #food_area .day_ul, #day_area #cloth_area .day_ul, #cloth_area #day_area .day_ul, #cloth_area .day_ul, #home_area #cloth_area .day_ul, #cloth_area #home_area .day_ul, #household_area #cloth_area .day_ul, #cloth_area #household_area .day_ul, #beauty_area #home_area .day_ul, #home_area #beauty_area .day_ul, #food_area #home_area .day_ul, #home_area #food_area .day_ul, #day_area #home_area .day_ul, #home_area #day_area .day_ul, #cloth_area #home_area .day_ul, #home_area #cloth_area .day_ul, #home_area .day_ul, #household_area #home_area .day_ul, #home_area #household_area .day_ul, #beauty_area #household_area .day_ul, #household_area #beauty_area .day_ul, #food_area #household_area .day_ul, #household_area #food_area .day_ul, #day_area #household_area .day_ul, #household_area #day_area .day_ul, #cloth_area #household_area .day_ul, #household_area #cloth_area .day_ul, #home_area #household_area .day_ul, #household_area #home_area .day_ul, #household_area .day_ul, #beauty_area .cloth_ul, #food_area #beauty_area .cloth_ul, #beauty_area #food_area .cloth_ul, #day_area #beauty_area .cloth_ul, #beauty_area #day_area .cloth_ul, #cloth_area #beauty_area .cloth_ul, #beauty_area #cloth_area .cloth_ul, #home_area #beauty_area .cloth_ul, #beauty_area #home_area .cloth_ul, #household_area #beauty_area .cloth_ul, #beauty_area #household_area .cloth_ul, #beauty_area #food_area .cloth_ul, #food_area #beauty_area .cloth_ul, #food_area .cloth_ul, #day_area #food_area .cloth_ul, #food_area #day_area .cloth_ul, #cloth_area #food_area .cloth_ul, #food_area #cloth_area .cloth_ul, #home_area #food_area .cloth_ul, #food_area #home_area .cloth_ul, #household_area #food_area .cloth_ul, #food_area #household_area .cloth_ul, #beauty_area #day_area .cloth_ul, #day_area #beauty_area .cloth_ul, #food_area #day_area .cloth_ul, #day_area #food_area .cloth_ul, #day_area .cloth_ul, #cloth_area #day_area .cloth_ul, #day_area #cloth_area .cloth_ul, #home_area #day_area .cloth_ul, #day_area #home_area .cloth_ul, #household_area #day_area .cloth_ul, #day_area #household_area .cloth_ul, #beauty_area #cloth_area .cloth_ul, #cloth_area #beauty_area .cloth_ul, #food_area #cloth_area .cloth_ul, #cloth_area #food_area .cloth_ul, #day_area #cloth_area .cloth_ul, #cloth_area #day_area .cloth_ul, #cloth_area .cloth_ul, #home_area #cloth_area .cloth_ul, #cloth_area #home_area .cloth_ul, #household_area #cloth_area .cloth_ul, #cloth_area #household_area .cloth_ul, #beauty_area #home_area .cloth_ul, #home_area #beauty_area .cloth_ul, #food_area #home_area .cloth_ul, #home_area #food_area .cloth_ul, #day_area #home_area .cloth_ul, #home_area #day_area .cloth_ul, #cloth_area #home_area .cloth_ul, #home_area #cloth_area .cloth_ul, #home_area .cloth_ul, #household_area #home_area .cloth_ul, #home_area #household_area .cloth_ul, #beauty_area #household_area .cloth_ul, #household_area #beauty_area .cloth_ul, #food_area #household_area .cloth_ul, #household_area #food_area .cloth_ul, #day_area #household_area .cloth_ul, #household_area #day_area .cloth_ul, #cloth_area #household_area .cloth_ul, #household_area #cloth_area .cloth_ul, #home_area #household_area .cloth_ul, #household_area #home_area .cloth_ul, #household_area .cloth_ul, #beauty_area .home_ul, #food_area #beauty_area .home_ul, #beauty_area #food_area .home_ul, #day_area #beauty_area .home_ul, #beauty_area #day_area .home_ul, #cloth_area #beauty_area .home_ul, #beauty_area #cloth_area .home_ul, #home_area #beauty_area .home_ul, #beauty_area #home_area .home_ul, #household_area #beauty_area .home_ul, #beauty_area #household_area .home_ul, #beauty_area #food_area .home_ul, #food_area #beauty_area .home_ul, #food_area .home_ul, #day_area #food_area .home_ul, #food_area #day_area .home_ul, #cloth_area #food_area .home_ul, #food_area #cloth_area .home_ul, #home_area #food_area .home_ul, #food_area #home_area .home_ul, #household_area #food_area .home_ul, #food_area #household_area .home_ul, #beauty_area #day_area .home_ul, #day_area #beauty_area .home_ul, #food_area #day_area .home_ul, #day_area #food_area .home_ul, #day_area .home_ul, #cloth_area #day_area .home_ul, #day_area #cloth_area .home_ul, #home_area #day_area .home_ul, #day_area #home_area .home_ul, #household_area #day_area .home_ul, #day_area #household_area .home_ul, #beauty_area #cloth_area .home_ul, #cloth_area #beauty_area .home_ul, #food_area #cloth_area .home_ul, #cloth_area #food_area .home_ul, #day_area #cloth_area .home_ul, #cloth_area #day_area .home_ul, #cloth_area .home_ul, #home_area #cloth_area .home_ul, #cloth_area #home_area .home_ul, #household_area #cloth_area .home_ul, #cloth_area #household_area .home_ul, #beauty_area #home_area .home_ul, #home_area #beauty_area .home_ul, #food_area #home_area .home_ul, #home_area #food_area .home_ul, #day_area #home_area .home_ul, #home_area #day_area .home_ul, #cloth_area #home_area .home_ul, #home_area #cloth_area .home_ul, #home_area .home_ul, #household_area #home_area .home_ul, #home_area #household_area .home_ul, #beauty_area #household_area .home_ul, #household_area #beauty_area .home_ul, #food_area #household_area .home_ul, #household_area #food_area .home_ul, #day_area #household_area .home_ul, #household_area #day_area .home_ul, #cloth_area #household_area .home_ul, #household_area #cloth_area .home_ul, #home_area #household_area .home_ul, #household_area #home_area .home_ul, #household_area .home_ul, #beauty_area .house_ul, #food_area #beauty_area .house_ul, #beauty_area #food_area .house_ul, #day_area #beauty_area .house_ul, #beauty_area #day_area .house_ul, #cloth_area #beauty_area .house_ul, #beauty_area #cloth_area .house_ul, #home_area #beauty_area .house_ul, #beauty_area #home_area .house_ul, #household_area #beauty_area .house_ul, #beauty_area #household_area .house_ul, #beauty_area #food_area .house_ul, #food_area #beauty_area .house_ul, #food_area .house_ul, #day_area #food_area .house_ul, #food_area #day_area .house_ul, #cloth_area #food_area .house_ul, #food_area #cloth_area .house_ul, #home_area #food_area .house_ul, #food_area #home_area .house_ul, #household_area #food_area .house_ul, #food_area #household_area .house_ul, #beauty_area #day_area .house_ul, #day_area #beauty_area .house_ul, #food_area #day_area .house_ul, #day_area #food_area .house_ul, #day_area .house_ul, #cloth_area #day_area .house_ul, #day_area #cloth_area .house_ul, #home_area #day_area .house_ul, #day_area #home_area .house_ul, #household_area #day_area .house_ul, #day_area #household_area .house_ul, #beauty_area #cloth_area .house_ul, #cloth_area #beauty_area .house_ul, #food_area #cloth_area .house_ul, #cloth_area #food_area .house_ul, #day_area #cloth_area .house_ul, #cloth_area #day_area .house_ul, #cloth_area .house_ul, #home_area #cloth_area .house_ul, #cloth_area #home_area .house_ul, #household_area #cloth_area .house_ul, #cloth_area #household_area .house_ul, #beauty_area #home_area .house_ul, #home_area #beauty_area .house_ul, #food_area #home_area .house_ul, #home_area #food_area .house_ul, #day_area #home_area .house_ul, #home_area #day_area .house_ul, #cloth_area #home_area .house_ul, #home_area #cloth_area .house_ul, #home_area .house_ul, #household_area #home_area .house_ul, #home_area #household_area .house_ul, #beauty_area #household_area .house_ul, #household_area #beauty_area .house_ul, #food_area #household_area .house_ul, #household_area #food_area .house_ul, #day_area #household_area .house_ul, #household_area #day_area .house_ul, #cloth_area #household_area .house_ul, #household_area #cloth_area .house_ul, #home_area #household_area .house_ul, #household_area #home_area .house_ul, #household_area .house_ul {
   float: right;
   height: 37px;
   line-height: 37px;
-  margin-top: 6px;
+  margin-top: 3px;
   list-style: none;
 }
-#beauty_area .beauty_ul li {
+#beauty_area .beauty_ul li, #food_area .beauty_ul li, #day_area .beauty_ul li, #cloth_area .beauty_ul li, #home_area .beauty_ul li, #household_area .beauty_ul li, #beauty_area .food_ul li, #food_area #beauty_area .food_ul li, #beauty_area #food_area .food_ul li, #day_area #beauty_area .food_ul li, #beauty_area #day_area .food_ul li, #cloth_area #beauty_area .food_ul li, #beauty_area #cloth_area .food_ul li, #home_area #beauty_area .food_ul li, #beauty_area #home_area .food_ul li, #household_area #beauty_area .food_ul li, #beauty_area #household_area .food_ul li, #beauty_area #food_area .food_ul li, #food_area #beauty_area .food_ul li, #food_area .food_ul li, #day_area #food_area .food_ul li, #food_area #day_area .food_ul li, #cloth_area #food_area .food_ul li, #food_area #cloth_area .food_ul li, #home_area #food_area .food_ul li, #food_area #home_area .food_ul li, #household_area #food_area .food_ul li, #food_area #household_area .food_ul li, #beauty_area #day_area .food_ul li, #day_area #beauty_area .food_ul li, #food_area #day_area .food_ul li, #day_area #food_area .food_ul li, #day_area .food_ul li, #cloth_area #day_area .food_ul li, #day_area #cloth_area .food_ul li, #home_area #day_area .food_ul li, #day_area #home_area .food_ul li, #household_area #day_area .food_ul li, #day_area #household_area .food_ul li, #beauty_area #cloth_area .food_ul li, #cloth_area #beauty_area .food_ul li, #food_area #cloth_area .food_ul li, #cloth_area #food_area .food_ul li, #day_area #cloth_area .food_ul li, #cloth_area #day_area .food_ul li, #cloth_area .food_ul li, #home_area #cloth_area .food_ul li, #cloth_area #home_area .food_ul li, #household_area #cloth_area .food_ul li, #cloth_area #household_area .food_ul li, #beauty_area #home_area .food_ul li, #home_area #beauty_area .food_ul li, #food_area #home_area .food_ul li, #home_area #food_area .food_ul li, #day_area #home_area .food_ul li, #home_area #day_area .food_ul li, #cloth_area #home_area .food_ul li, #home_area #cloth_area .food_ul li, #home_area .food_ul li, #household_area #home_area .food_ul li, #home_area #household_area .food_ul li, #beauty_area #household_area .food_ul li, #household_area #beauty_area .food_ul li, #food_area #household_area .food_ul li, #household_area #food_area .food_ul li, #day_area #household_area .food_ul li, #household_area #day_area .food_ul li, #cloth_area #household_area .food_ul li, #household_area #cloth_area .food_ul li, #home_area #household_area .food_ul li, #household_area #home_area .food_ul li, #household_area .food_ul li, #beauty_area .day_ul li, #food_area #beauty_area .day_ul li, #beauty_area #food_area .day_ul li, #day_area #beauty_area .day_ul li, #beauty_area #day_area .day_ul li, #cloth_area #beauty_area .day_ul li, #beauty_area #cloth_area .day_ul li, #home_area #beauty_area .day_ul li, #beauty_area #home_area .day_ul li, #household_area #beauty_area .day_ul li, #beauty_area #household_area .day_ul li, #beauty_area #food_area .day_ul li, #food_area #beauty_area .day_ul li, #food_area .day_ul li, #day_area #food_area .day_ul li, #food_area #day_area .day_ul li, #cloth_area #food_area .day_ul li, #food_area #cloth_area .day_ul li, #home_area #food_area .day_ul li, #food_area #home_area .day_ul li, #household_area #food_area .day_ul li, #food_area #household_area .day_ul li, #beauty_area #day_area .day_ul li, #day_area #beauty_area .day_ul li, #food_area #day_area .day_ul li, #day_area #food_area .day_ul li, #day_area .day_ul li, #cloth_area #day_area .day_ul li, #day_area #cloth_area .day_ul li, #home_area #day_area .day_ul li, #day_area #home_area .day_ul li, #household_area #day_area .day_ul li, #day_area #household_area .day_ul li, #beauty_area #cloth_area .day_ul li, #cloth_area #beauty_area .day_ul li, #food_area #cloth_area .day_ul li, #cloth_area #food_area .day_ul li, #day_area #cloth_area .day_ul li, #cloth_area #day_area .day_ul li, #cloth_area .day_ul li, #home_area #cloth_area .day_ul li, #cloth_area #home_area .day_ul li, #household_area #cloth_area .day_ul li, #cloth_area #household_area .day_ul li, #beauty_area #home_area .day_ul li, #home_area #beauty_area .day_ul li, #food_area #home_area .day_ul li, #home_area #food_area .day_ul li, #day_area #home_area .day_ul li, #home_area #day_area .day_ul li, #cloth_area #home_area .day_ul li, #home_area #cloth_area .day_ul li, #home_area .day_ul li, #household_area #home_area .day_ul li, #home_area #household_area .day_ul li, #beauty_area #household_area .day_ul li, #household_area #beauty_area .day_ul li, #food_area #household_area .day_ul li, #household_area #food_area .day_ul li, #day_area #household_area .day_ul li, #household_area #day_area .day_ul li, #cloth_area #household_area .day_ul li, #household_area #cloth_area .day_ul li, #home_area #household_area .day_ul li, #household_area #home_area .day_ul li, #household_area .day_ul li, #beauty_area .cloth_ul li, #food_area #beauty_area .cloth_ul li, #beauty_area #food_area .cloth_ul li, #day_area #beauty_area .cloth_ul li, #beauty_area #day_area .cloth_ul li, #cloth_area #beauty_area .cloth_ul li, #beauty_area #cloth_area .cloth_ul li, #home_area #beauty_area .cloth_ul li, #beauty_area #home_area .cloth_ul li, #household_area #beauty_area .cloth_ul li, #beauty_area #household_area .cloth_ul li, #beauty_area #food_area .cloth_ul li, #food_area #beauty_area .cloth_ul li, #food_area .cloth_ul li, #day_area #food_area .cloth_ul li, #food_area #day_area .cloth_ul li, #cloth_area #food_area .cloth_ul li, #food_area #cloth_area .cloth_ul li, #home_area #food_area .cloth_ul li, #food_area #home_area .cloth_ul li, #household_area #food_area .cloth_ul li, #food_area #household_area .cloth_ul li, #beauty_area #day_area .cloth_ul li, #day_area #beauty_area .cloth_ul li, #food_area #day_area .cloth_ul li, #day_area #food_area .cloth_ul li, #day_area .cloth_ul li, #cloth_area #day_area .cloth_ul li, #day_area #cloth_area .cloth_ul li, #home_area #day_area .cloth_ul li, #day_area #home_area .cloth_ul li, #household_area #day_area .cloth_ul li, #day_area #household_area .cloth_ul li, #beauty_area #cloth_area .cloth_ul li, #cloth_area #beauty_area .cloth_ul li, #food_area #cloth_area .cloth_ul li, #cloth_area #food_area .cloth_ul li, #day_area #cloth_area .cloth_ul li, #cloth_area #day_area .cloth_ul li, #cloth_area .cloth_ul li, #home_area #cloth_area .cloth_ul li, #cloth_area #home_area .cloth_ul li, #household_area #cloth_area .cloth_ul li, #cloth_area #household_area .cloth_ul li, #beauty_area #home_area .cloth_ul li, #home_area #beauty_area .cloth_ul li, #food_area #home_area .cloth_ul li, #home_area #food_area .cloth_ul li, #day_area #home_area .cloth_ul li, #home_area #day_area .cloth_ul li, #cloth_area #home_area .cloth_ul li, #home_area #cloth_area .cloth_ul li, #home_area .cloth_ul li, #household_area #home_area .cloth_ul li, #home_area #household_area .cloth_ul li, #beauty_area #household_area .cloth_ul li, #household_area #beauty_area .cloth_ul li, #food_area #household_area .cloth_ul li, #household_area #food_area .cloth_ul li, #day_area #household_area .cloth_ul li, #household_area #day_area .cloth_ul li, #cloth_area #household_area .cloth_ul li, #household_area #cloth_area .cloth_ul li, #home_area #household_area .cloth_ul li, #household_area #home_area .cloth_ul li, #household_area .cloth_ul li, #beauty_area .home_ul li, #food_area #beauty_area .home_ul li, #beauty_area #food_area .home_ul li, #day_area #beauty_area .home_ul li, #beauty_area #day_area .home_ul li, #cloth_area #beauty_area .home_ul li, #beauty_area #cloth_area .home_ul li, #home_area #beauty_area .home_ul li, #beauty_area #home_area .home_ul li, #household_area #beauty_area .home_ul li, #beauty_area #household_area .home_ul li, #beauty_area #food_area .home_ul li, #food_area #beauty_area .home_ul li, #food_area .home_ul li, #day_area #food_area .home_ul li, #food_area #day_area .home_ul li, #cloth_area #food_area .home_ul li, #food_area #cloth_area .home_ul li, #home_area #food_area .home_ul li, #food_area #home_area .home_ul li, #household_area #food_area .home_ul li, #food_area #household_area .home_ul li, #beauty_area #day_area .home_ul li, #day_area #beauty_area .home_ul li, #food_area #day_area .home_ul li, #day_area #food_area .home_ul li, #day_area .home_ul li, #cloth_area #day_area .home_ul li, #day_area #cloth_area .home_ul li, #home_area #day_area .home_ul li, #day_area #home_area .home_ul li, #household_area #day_area .home_ul li, #day_area #household_area .home_ul li, #beauty_area #cloth_area .home_ul li, #cloth_area #beauty_area .home_ul li, #food_area #cloth_area .home_ul li, #cloth_area #food_area .home_ul li, #day_area #cloth_area .home_ul li, #cloth_area #day_area .home_ul li, #cloth_area .home_ul li, #home_area #cloth_area .home_ul li, #cloth_area #home_area .home_ul li, #household_area #cloth_area .home_ul li, #cloth_area #household_area .home_ul li, #beauty_area #home_area .home_ul li, #home_area #beauty_area .home_ul li, #food_area #home_area .home_ul li, #home_area #food_area .home_ul li, #day_area #home_area .home_ul li, #home_area #day_area .home_ul li, #cloth_area #home_area .home_ul li, #home_area #cloth_area .home_ul li, #home_area .home_ul li, #household_area #home_area .home_ul li, #home_area #household_area .home_ul li, #beauty_area #household_area .home_ul li, #household_area #beauty_area .home_ul li, #food_area #household_area .home_ul li, #household_area #food_area .home_ul li, #day_area #household_area .home_ul li, #household_area #day_area .home_ul li, #cloth_area #household_area .home_ul li, #household_area #cloth_area .home_ul li, #home_area #household_area .home_ul li, #household_area #home_area .home_ul li, #household_area .home_ul li, #beauty_area .house_ul li, #food_area #beauty_area .house_ul li, #beauty_area #food_area .house_ul li, #day_area #beauty_area .house_ul li, #beauty_area #day_area .house_ul li, #cloth_area #beauty_area .house_ul li, #beauty_area #cloth_area .house_ul li, #home_area #beauty_area .house_ul li, #beauty_area #home_area .house_ul li, #household_area #beauty_area .house_ul li, #beauty_area #household_area .house_ul li, #beauty_area #food_area .house_ul li, #food_area #beauty_area .house_ul li, #food_area .house_ul li, #day_area #food_area .house_ul li, #food_area #day_area .house_ul li, #cloth_area #food_area .house_ul li, #food_area #cloth_area .house_ul li, #home_area #food_area .house_ul li, #food_area #home_area .house_ul li, #household_area #food_area .house_ul li, #food_area #household_area .house_ul li, #beauty_area #day_area .house_ul li, #day_area #beauty_area .house_ul li, #food_area #day_area .house_ul li, #day_area #food_area .house_ul li, #day_area .house_ul li, #cloth_area #day_area .house_ul li, #day_area #cloth_area .house_ul li, #home_area #day_area .house_ul li, #day_area #home_area .house_ul li, #household_area #day_area .house_ul li, #day_area #household_area .house_ul li, #beauty_area #cloth_area .house_ul li, #cloth_area #beauty_area .house_ul li, #food_area #cloth_area .house_ul li, #cloth_area #food_area .house_ul li, #day_area #cloth_area .house_ul li, #cloth_area #day_area .house_ul li, #cloth_area .house_ul li, #home_area #cloth_area .house_ul li, #cloth_area #home_area .house_ul li, #household_area #cloth_area .house_ul li, #cloth_area #household_area .house_ul li, #beauty_area #home_area .house_ul li, #home_area #beauty_area .house_ul li, #food_area #home_area .house_ul li, #home_area #food_area .house_ul li, #day_area #home_area .house_ul li, #home_area #day_area .house_ul li, #cloth_area #home_area .house_ul li, #home_area #cloth_area .house_ul li, #home_area .house_ul li, #household_area #home_area .house_ul li, #home_area #household_area .house_ul li, #beauty_area #household_area .house_ul li, #household_area #beauty_area .house_ul li, #food_area #household_area .house_ul li, #household_area #food_area .house_ul li, #day_area #household_area .house_ul li, #household_area #day_area .house_ul li, #cloth_area #household_area .house_ul li, #household_area #cloth_area .house_ul li, #home_area #household_area .house_ul li, #household_area #home_area .house_ul li, #household_area .house_ul li {
   float: left;
 }
-#beauty_area .beauty_ul li a {
+#beauty_area .beauty_ul li a, #food_area .beauty_ul li a, #day_area .beauty_ul li a, #cloth_area .beauty_ul li a, #home_area .beauty_ul li a, #household_area .beauty_ul li a, #beauty_area .food_ul li a, #food_area #beauty_area .food_ul li a, #beauty_area #food_area .food_ul li a, #day_area #beauty_area .food_ul li a, #beauty_area #day_area .food_ul li a, #cloth_area #beauty_area .food_ul li a, #beauty_area #cloth_area .food_ul li a, #home_area #beauty_area .food_ul li a, #beauty_area #home_area .food_ul li a, #household_area #beauty_area .food_ul li a, #beauty_area #household_area .food_ul li a, #beauty_area #food_area .food_ul li a, #food_area #beauty_area .food_ul li a, #food_area .food_ul li a, #day_area #food_area .food_ul li a, #food_area #day_area .food_ul li a, #cloth_area #food_area .food_ul li a, #food_area #cloth_area .food_ul li a, #home_area #food_area .food_ul li a, #food_area #home_area .food_ul li a, #household_area #food_area .food_ul li a, #food_area #household_area .food_ul li a, #beauty_area #day_area .food_ul li a, #day_area #beauty_area .food_ul li a, #food_area #day_area .food_ul li a, #day_area #food_area .food_ul li a, #day_area .food_ul li a, #cloth_area #day_area .food_ul li a, #day_area #cloth_area .food_ul li a, #home_area #day_area .food_ul li a, #day_area #home_area .food_ul li a, #household_area #day_area .food_ul li a, #day_area #household_area .food_ul li a, #beauty_area #cloth_area .food_ul li a, #cloth_area #beauty_area .food_ul li a, #food_area #cloth_area .food_ul li a, #cloth_area #food_area .food_ul li a, #day_area #cloth_area .food_ul li a, #cloth_area #day_area .food_ul li a, #cloth_area .food_ul li a, #home_area #cloth_area .food_ul li a, #cloth_area #home_area .food_ul li a, #household_area #cloth_area .food_ul li a, #cloth_area #household_area .food_ul li a, #beauty_area #home_area .food_ul li a, #home_area #beauty_area .food_ul li a, #food_area #home_area .food_ul li a, #home_area #food_area .food_ul li a, #day_area #home_area .food_ul li a, #home_area #day_area .food_ul li a, #cloth_area #home_area .food_ul li a, #home_area #cloth_area .food_ul li a, #home_area .food_ul li a, #household_area #home_area .food_ul li a, #home_area #household_area .food_ul li a, #beauty_area #household_area .food_ul li a, #household_area #beauty_area .food_ul li a, #food_area #household_area .food_ul li a, #household_area #food_area .food_ul li a, #day_area #household_area .food_ul li a, #household_area #day_area .food_ul li a, #cloth_area #household_area .food_ul li a, #household_area #cloth_area .food_ul li a, #home_area #household_area .food_ul li a, #household_area #home_area .food_ul li a, #household_area .food_ul li a, #beauty_area .day_ul li a, #food_area #beauty_area .day_ul li a, #beauty_area #food_area .day_ul li a, #day_area #beauty_area .day_ul li a, #beauty_area #day_area .day_ul li a, #cloth_area #beauty_area .day_ul li a, #beauty_area #cloth_area .day_ul li a, #home_area #beauty_area .day_ul li a, #beauty_area #home_area .day_ul li a, #household_area #beauty_area .day_ul li a, #beauty_area #household_area .day_ul li a, #beauty_area #food_area .day_ul li a, #food_area #beauty_area .day_ul li a, #food_area .day_ul li a, #day_area #food_area .day_ul li a, #food_area #day_area .day_ul li a, #cloth_area #food_area .day_ul li a, #food_area #cloth_area .day_ul li a, #home_area #food_area .day_ul li a, #food_area #home_area .day_ul li a, #household_area #food_area .day_ul li a, #food_area #household_area .day_ul li a, #beauty_area #day_area .day_ul li a, #day_area #beauty_area .day_ul li a, #food_area #day_area .day_ul li a, #day_area #food_area .day_ul li a, #day_area .day_ul li a, #cloth_area #day_area .day_ul li a, #day_area #cloth_area .day_ul li a, #home_area #day_area .day_ul li a, #day_area #home_area .day_ul li a, #household_area #day_area .day_ul li a, #day_area #household_area .day_ul li a, #beauty_area #cloth_area .day_ul li a, #cloth_area #beauty_area .day_ul li a, #food_area #cloth_area .day_ul li a, #cloth_area #food_area .day_ul li a, #day_area #cloth_area .day_ul li a, #cloth_area #day_area .day_ul li a, #cloth_area .day_ul li a, #home_area #cloth_area .day_ul li a, #cloth_area #home_area .day_ul li a, #household_area #cloth_area .day_ul li a, #cloth_area #household_area .day_ul li a, #beauty_area #home_area .day_ul li a, #home_area #beauty_area .day_ul li a, #food_area #home_area .day_ul li a, #home_area #food_area .day_ul li a, #day_area #home_area .day_ul li a, #home_area #day_area .day_ul li a, #cloth_area #home_area .day_ul li a, #home_area #cloth_area .day_ul li a, #home_area .day_ul li a, #household_area #home_area .day_ul li a, #home_area #household_area .day_ul li a, #beauty_area #household_area .day_ul li a, #household_area #beauty_area .day_ul li a, #food_area #household_area .day_ul li a, #household_area #food_area .day_ul li a, #day_area #household_area .day_ul li a, #household_area #day_area .day_ul li a, #cloth_area #household_area .day_ul li a, #household_area #cloth_area .day_ul li a, #home_area #household_area .day_ul li a, #household_area #home_area .day_ul li a, #household_area .day_ul li a, #beauty_area .cloth_ul li a, #food_area #beauty_area .cloth_ul li a, #beauty_area #food_area .cloth_ul li a, #day_area #beauty_area .cloth_ul li a, #beauty_area #day_area .cloth_ul li a, #cloth_area #beauty_area .cloth_ul li a, #beauty_area #cloth_area .cloth_ul li a, #home_area #beauty_area .cloth_ul li a, #beauty_area #home_area .cloth_ul li a, #household_area #beauty_area .cloth_ul li a, #beauty_area #household_area .cloth_ul li a, #beauty_area #food_area .cloth_ul li a, #food_area #beauty_area .cloth_ul li a, #food_area .cloth_ul li a, #day_area #food_area .cloth_ul li a, #food_area #day_area .cloth_ul li a, #cloth_area #food_area .cloth_ul li a, #food_area #cloth_area .cloth_ul li a, #home_area #food_area .cloth_ul li a, #food_area #home_area .cloth_ul li a, #household_area #food_area .cloth_ul li a, #food_area #household_area .cloth_ul li a, #beauty_area #day_area .cloth_ul li a, #day_area #beauty_area .cloth_ul li a, #food_area #day_area .cloth_ul li a, #day_area #food_area .cloth_ul li a, #day_area .cloth_ul li a, #cloth_area #day_area .cloth_ul li a, #day_area #cloth_area .cloth_ul li a, #home_area #day_area .cloth_ul li a, #day_area #home_area .cloth_ul li a, #household_area #day_area .cloth_ul li a, #day_area #household_area .cloth_ul li a, #beauty_area #cloth_area .cloth_ul li a, #cloth_area #beauty_area .cloth_ul li a, #food_area #cloth_area .cloth_ul li a, #cloth_area #food_area .cloth_ul li a, #day_area #cloth_area .cloth_ul li a, #cloth_area #day_area .cloth_ul li a, #cloth_area .cloth_ul li a, #home_area #cloth_area .cloth_ul li a, #cloth_area #home_area .cloth_ul li a, #household_area #cloth_area .cloth_ul li a, #cloth_area #household_area .cloth_ul li a, #beauty_area #home_area .cloth_ul li a, #home_area #beauty_area .cloth_ul li a, #food_area #home_area .cloth_ul li a, #home_area #food_area .cloth_ul li a, #day_area #home_area .cloth_ul li a, #home_area #day_area .cloth_ul li a, #cloth_area #home_area .cloth_ul li a, #home_area #cloth_area .cloth_ul li a, #home_area .cloth_ul li a, #household_area #home_area .cloth_ul li a, #home_area #household_area .cloth_ul li a, #beauty_area #household_area .cloth_ul li a, #household_area #beauty_area .cloth_ul li a, #food_area #household_area .cloth_ul li a, #household_area #food_area .cloth_ul li a, #day_area #household_area .cloth_ul li a, #household_area #day_area .cloth_ul li a, #cloth_area #household_area .cloth_ul li a, #household_area #cloth_area .cloth_ul li a, #home_area #household_area .cloth_ul li a, #household_area #home_area .cloth_ul li a, #household_area .cloth_ul li a, #beauty_area .home_ul li a, #food_area #beauty_area .home_ul li a, #beauty_area #food_area .home_ul li a, #day_area #beauty_area .home_ul li a, #beauty_area #day_area .home_ul li a, #cloth_area #beauty_area .home_ul li a, #beauty_area #cloth_area .home_ul li a, #home_area #beauty_area .home_ul li a, #beauty_area #home_area .home_ul li a, #household_area #beauty_area .home_ul li a, #beauty_area #household_area .home_ul li a, #beauty_area #food_area .home_ul li a, #food_area #beauty_area .home_ul li a, #food_area .home_ul li a, #day_area #food_area .home_ul li a, #food_area #day_area .home_ul li a, #cloth_area #food_area .home_ul li a, #food_area #cloth_area .home_ul li a, #home_area #food_area .home_ul li a, #food_area #home_area .home_ul li a, #household_area #food_area .home_ul li a, #food_area #household_area .home_ul li a, #beauty_area #day_area .home_ul li a, #day_area #beauty_area .home_ul li a, #food_area #day_area .home_ul li a, #day_area #food_area .home_ul li a, #day_area .home_ul li a, #cloth_area #day_area .home_ul li a, #day_area #cloth_area .home_ul li a, #home_area #day_area .home_ul li a, #day_area #home_area .home_ul li a, #household_area #day_area .home_ul li a, #day_area #household_area .home_ul li a, #beauty_area #cloth_area .home_ul li a, #cloth_area #beauty_area .home_ul li a, #food_area #cloth_area .home_ul li a, #cloth_area #food_area .home_ul li a, #day_area #cloth_area .home_ul li a, #cloth_area #day_area .home_ul li a, #cloth_area .home_ul li a, #home_area #cloth_area .home_ul li a, #cloth_area #home_area .home_ul li a, #household_area #cloth_area .home_ul li a, #cloth_area #household_area .home_ul li a, #beauty_area #home_area .home_ul li a, #home_area #beauty_area .home_ul li a, #food_area #home_area .home_ul li a, #home_area #food_area .home_ul li a, #day_area #home_area .home_ul li a, #home_area #day_area .home_ul li a, #cloth_area #home_area .home_ul li a, #home_area #cloth_area .home_ul li a, #home_area .home_ul li a, #household_area #home_area .home_ul li a, #home_area #household_area .home_ul li a, #beauty_area #household_area .home_ul li a, #household_area #beauty_area .home_ul li a, #food_area #household_area .home_ul li a, #household_area #food_area .home_ul li a, #day_area #household_area .home_ul li a, #household_area #day_area .home_ul li a, #cloth_area #household_area .home_ul li a, #household_area #cloth_area .home_ul li a, #home_area #household_area .home_ul li a, #household_area #home_area .home_ul li a, #household_area .home_ul li a, #beauty_area .house_ul li a, #food_area #beauty_area .house_ul li a, #beauty_area #food_area .house_ul li a, #day_area #beauty_area .house_ul li a, #beauty_area #day_area .house_ul li a, #cloth_area #beauty_area .house_ul li a, #beauty_area #cloth_area .house_ul li a, #home_area #beauty_area .house_ul li a, #beauty_area #home_area .house_ul li a, #household_area #beauty_area .house_ul li a, #beauty_area #household_area .house_ul li a, #beauty_area #food_area .house_ul li a, #food_area #beauty_area .house_ul li a, #food_area .house_ul li a, #day_area #food_area .house_ul li a, #food_area #day_area .house_ul li a, #cloth_area #food_area .house_ul li a, #food_area #cloth_area .house_ul li a, #home_area #food_area .house_ul li a, #food_area #home_area .house_ul li a, #household_area #food_area .house_ul li a, #food_area #household_area .house_ul li a, #beauty_area #day_area .house_ul li a, #day_area #beauty_area .house_ul li a, #food_area #day_area .house_ul li a, #day_area #food_area .house_ul li a, #day_area .house_ul li a, #cloth_area #day_area .house_ul li a, #day_area #cloth_area .house_ul li a, #home_area #day_area .house_ul li a, #day_area #home_area .house_ul li a, #household_area #day_area .house_ul li a, #day_area #household_area .house_ul li a, #beauty_area #cloth_area .house_ul li a, #cloth_area #beauty_area .house_ul li a, #food_area #cloth_area .house_ul li a, #cloth_area #food_area .house_ul li a, #day_area #cloth_area .house_ul li a, #cloth_area #day_area .house_ul li a, #cloth_area .house_ul li a, #home_area #cloth_area .house_ul li a, #cloth_area #home_area .house_ul li a, #household_area #cloth_area .house_ul li a, #cloth_area #household_area .house_ul li a, #beauty_area #home_area .house_ul li a, #home_area #beauty_area .house_ul li a, #food_area #home_area .house_ul li a, #home_area #food_area .house_ul li a, #day_area #home_area .house_ul li a, #home_area #day_area .house_ul li a, #cloth_area #home_area .house_ul li a, #home_area #cloth_area .house_ul li a, #home_area .house_ul li a, #household_area #home_area .house_ul li a, #home_area #household_area .house_ul li a, #beauty_area #household_area .house_ul li a, #household_area #beauty_area .house_ul li a, #food_area #household_area .house_ul li a, #household_area #food_area .house_ul li a, #day_area #household_area .house_ul li a, #household_area #day_area .house_ul li a, #cloth_area #household_area .house_ul li a, #household_area #cloth_area .house_ul li a, #home_area #household_area .house_ul li a, #household_area #home_area .house_ul li a, #household_area .house_ul li a {
   display: block;
   padding: 0 12px;
   height: 35px;
   line-height: 35px;
   color: #434343;
 }
+#beauty_area .beauty_content, #food_area .beauty_content, #day_area .beauty_content, #cloth_area .beauty_content, #home_area .beauty_content, #household_area .beauty_content {
+  width: 100%;
+  margin-top: 20px;
+}
+#beauty_area .beauty_content:after, #food_area .beauty_content:after, #day_area .beauty_content:after, #cloth_area .beauty_content:after, #home_area .beauty_content:after, #household_area .beauty_content:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#beauty_area .beauty_content .beauty_li, #food_area .beauty_content .beauty_li, #day_area .beauty_content .beauty_li, #cloth_area .beauty_content .beauty_li, #home_area .beauty_content .beauty_li, #household_area .beauty_content .beauty_li {
+  width: 183px;
+  margin-right: 10px;
+  height: 274px;
+  float: left;
+  padding: 0 0 5px 0;
+  background-color: #fff;
+  margin-bottom: 15px;
+  position: relative;
+  border: 3px solid #fbfbfb;
+}
+#beauty_area .beauty_content .beauty_li .a1, #food_area .beauty_content .beauty_li .a1, #day_area .beauty_content .beauty_li .a1, #cloth_area .beauty_content .beauty_li .a1, #home_area .beauty_content .beauty_li .a1, #household_area .beauty_content .beauty_li .a1 {
+  display: block;
+}
+#beauty_area .beauty_content .beauty_li img, #food_area .beauty_content .beauty_li img, #day_area .beauty_content .beauty_li img, #cloth_area .beauty_content .beauty_li img, #home_area .beauty_content .beauty_li img, #household_area .beauty_content .beauty_li img {
+  width: 100%;
+}
+#beauty_area .beauty_content .beauty_li .new_title_a, #food_area .beauty_content .beauty_li .new_title_a, #day_area .beauty_content .beauty_li .new_title_a, #cloth_area .beauty_content .beauty_li .new_title_a, #home_area .beauty_content .beauty_li .new_title_a, #household_area .beauty_content .beauty_li .new_title_a {
+  display: block;
+  cursor: pointer;
+}
+#beauty_area .beauty_content .beauty_li .new_title_a .p1, #food_area .beauty_content .beauty_li .new_title_a .p1, #day_area .beauty_content .beauty_li .new_title_a .p1, #cloth_area .beauty_content .beauty_li .new_title_a .p1, #home_area .beauty_content .beauty_li .new_title_a .p1, #household_area .beauty_content .beauty_li .new_title_a .p1 {
+  padding: 3px 10px 0;
+  color: #999;
+}
+#beauty_area .beauty_content .beauty_li .new_title_a .p2, #food_area .beauty_content .beauty_li .new_title_a .p2, #day_area .beauty_content .beauty_li .new_title_a .p2, #cloth_area .beauty_content .beauty_li .new_title_a .p2, #home_area .beauty_content .beauty_li .new_title_a .p2, #household_area .beauty_content .beauty_li .new_title_a .p2 {
+  color: #333;
+  padding: 5px 10px 0;
+}
+#beauty_area .beauty_content .beauty_li .new_price, #food_area .beauty_content .beauty_li .new_price, #day_area .beauty_content .beauty_li .new_price, #cloth_area .beauty_content .beauty_li .new_price, #home_area .beauty_content .beauty_li .new_price, #household_area .beauty_content .beauty_li .new_price {
+  margin-top: 3px;
+  padding: 0 10px;
+}
+#beauty_area .beauty_content .beauty_li .new_price:after, #food_area .beauty_content .beauty_li .new_price:after, #day_area .beauty_content .beauty_li .new_price:after, #cloth_area .beauty_content .beauty_li .new_price:after, #home_area .beauty_content .beauty_li .new_price:after, #household_area .beauty_content .beauty_li .new_price:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#beauty_area .beauty_content .beauty_li .new_price .price1, #food_area .beauty_content .beauty_li .new_price .price1, #day_area .beauty_content .beauty_li .new_price .price1, #cloth_area .beauty_content .beauty_li .new_price .price1, #home_area .beauty_content .beauty_li .new_price .price1, #household_area .beauty_content .beauty_li .new_price .price1 {
+  color: #c4193f;
+  font-size: 22px;
+  float: left;
+  margin-left: -3px;
+}
+#beauty_area .beauty_content .beauty_li .new_price .price2, #food_area .beauty_content .beauty_li .new_price .price2, #day_area .beauty_content .beauty_li .new_price .price2, #cloth_area .beauty_content .beauty_li .new_price .price2, #home_area .beauty_content .beauty_li .new_price .price2, #household_area .beauty_content .beauty_li .new_price .price2 {
+  color: #969696;
+  font-size: 14px;
+  padding: 8px 0 0 10px;
+  float: left;
+  text-decoration: line-through;
+}
+#beauty_area .li_img, #food_area .li_img, #day_area .li_img, #cloth_area .li_img, #home_area .li_img, #household_area .li_img {
+  width: 584px;
+  height: 274px;
+  float: left;
+  padding: 3px 0 0 0;
+  margin-right: 10px;
+  list-style: none;
+}
+#beauty_area .li_img img, #food_area .li_img img, #day_area .li_img img, #cloth_area .li_img img, #home_area .li_img img, #household_area .li_img img {
+  width: 100%;
+}
+#beauty_area .b_ul, #food_area .b_ul, #day_area .b_ul, #cloth_area .b_ul, #home_area .b_ul, #household_area .b_ul {
+  list-style: none;
+}
+#beauty_area .b_ul:after, #food_area .b_ul:after, #day_area .b_ul:after, #cloth_area .b_ul:after, #home_area .b_ul:after, #household_area .b_ul:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#beauty_area .f_ul, #food_area .f_ul, #day_area .f_ul, #cloth_area .f_ul, #home_area .f_ul, #household_area .f_ul {
+  list-style: none;
+}
+#beauty_area .f_ul:after, #food_area .f_ul:after, #day_area .f_ul:after, #cloth_area .f_ul:after, #home_area .f_ul:after, #household_area .f_ul:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#beauty_area .d_ul, #food_area .d_ul, #day_area .d_ul, #cloth_area .d_ul, #home_area .d_ul, #household_area .d_ul {
+  list-style: none;
+}
+#beauty_area .d_ul:after, #food_area .d_ul:after, #day_area .d_ul:after, #cloth_area .d_ul:after, #home_area .d_ul:after, #household_area .d_ul:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#beauty_area .c_ul, #food_area .c_ul, #day_area .c_ul, #cloth_area .c_ul, #home_area .c_ul, #household_area .c_ul {
+  list-style: none;
+}
+#beauty_area .c_ul:after, #food_area .c_ul:after, #day_area .c_ul:after, #cloth_area .c_ul:after, #home_area .c_ul:after, #household_area .c_ul:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#beauty_area .h_ul, #food_area .h_ul, #day_area .h_ul, #cloth_area .h_ul, #home_area .h_ul, #household_area .h_ul {
+  list-style: none;
+}
+#beauty_area .h_ul:after, #food_area .h_ul:after, #day_area .h_ul:after, #cloth_area .h_ul:after, #home_area .h_ul:after, #household_area .h_ul:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#beauty_area .hs_ul, #food_area .hs_ul, #day_area .hs_ul, #cloth_area .hs_ul, #home_area .hs_ul, #household_area .hs_ul {
+  list-style: none;
+}
+#beauty_area .hs_ul:after, #food_area .hs_ul:after, #day_area .hs_ul:after, #cloth_area .hs_ul:after, #home_area .hs_ul:after, #household_area .hs_ul:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#beauty_area .gg, #food_area .gg, #day_area .gg, #cloth_area .gg, #home_area .gg, #household_area .gg {
+  width: 100%;
+  height: 111px;
+  border: 1px solid #eaeaea;
+  background-color: #fff;
+  position: relative;
+}
+#beauty_area .gg:after, #food_area .gg:after, #day_area .gg:after, #cloth_area .gg:after, #home_area .gg:after, #household_area .gg:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#beauty_area .gg span, #food_area .gg span, #day_area .gg span, #cloth_area .gg span, #home_area .gg span, #household_area .gg span {
+  width: 96px;
+  text-align: left;
+  line-height: 111px;
+  display: block;
+  float: left;
+  color: #333333;
+  font-size: 16px;
+  padding-left: 30px;
+}
+#beauty_area .gg ul, #food_area .gg ul, #day_area .gg ul, #cloth_area .gg ul, #home_area .gg ul, #household_area .gg ul {
+  list-style: none;
+  float: left;
+  margin: 15px 0;
+  width: 860px;
+}
+#beauty_area .gg ul li, #food_area .gg ul li, #day_area .gg ul li, #cloth_area .gg ul li, #home_area .gg ul li, #household_area .gg ul li {
+  float: left;
+  padding: 0 7px;
+  height: 80px;
+  display: block;
+  width: 80px;
+  overflow: hidden;
+}
+#beauty_area .gg ul li img, #food_area .gg ul li img, #day_area .gg ul li img, #cloth_area .gg ul li img, #home_area .gg ul li img, #household_area .gg ul li img {
+  width: 100%;
+}
 
 /*食品健康*/
-#food_area {
-  width: 1000px;
-  margin: 0 auto;
-  height: 780px;
-  background: green;
+#food_area .gg {
+  width: 100%;
+  height: 111px;
+  border: 1px solid #eaeaea;
+  background-color: #fff;
+  position: relative;
+}
+#food_area .gg:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#food_area .gg span {
+  width: 96px;
+  text-align: left;
+  line-height: 111px;
+  display: block;
+  float: left;
+  color: #333333;
+  font-size: 16px;
+  padding-left: 30px;
+}
+#food_area .gg ul {
+  list-style: none;
+  float: left;
+  margin: 15px 0;
+  width: 860px;
+}
+#food_area .gg ul li {
+  float: left;
+  padding: 0 7px;
+  height: 80px;
+  display: block;
+  width: 80px;
+  overflow: hidden;
+}
+#food_area .gg ul li img {
+  width: 100%;
 }
 
 /*餐厨日用*/
-#day_area {
-  width: 1000px;
-  margin: 0 auto;
-  height: 780px;
-  background: orange;
+#day_area .gg {
+  width: 100%;
+  height: 111px;
+  border: 1px solid #eaeaea;
+  background-color: #fff;
+  position: relative;
+}
+#day_area .gg:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#day_area .gg span {
+  width: 96px;
+  text-align: left;
+  line-height: 111px;
+  display: block;
+  float: left;
+  color: #333333;
+  font-size: 16px;
+  padding-left: 30px;
+}
+#day_area .gg ul {
+  list-style: none;
+  float: left;
+  margin: 15px 0;
+  width: 860px;
+}
+#day_area .gg ul li {
+  float: left;
+  padding: 0 7px;
+  height: 80px;
+  display: block;
+  width: 80px;
+  overflow: hidden;
+}
+#day_area .gg ul li img {
+  width: 100%;
 }
 
 /*服装配饰*/
-#cloth_area {
-  width: 1000px;
-  margin: 0 auto;
-  height: 780px;
-  background: blueviolet;
+#cloth_area .gg {
+  width: 100%;
+  height: 111px;
+  border: 1px solid #eaeaea;
+  background-color: #fff;
+  position: relative;
+}
+#cloth_area .gg:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#cloth_area .gg span {
+  width: 96px;
+  text-align: left;
+  line-height: 111px;
+  display: block;
+  float: left;
+  color: #333333;
+  font-size: 16px;
+  padding-left: 30px;
+}
+#cloth_area .gg ul {
+  list-style: none;
+  float: left;
+  margin: 15px 0;
+  width: 860px;
+}
+#cloth_area .gg ul li {
+  float: left;
+  padding: 0 7px;
+  height: 80px;
+  display: block;
+  width: 80px;
+  overflow: hidden;
+}
+#cloth_area .gg ul li img {
+  width: 100%;
 }
 
 /*布艺家纺*/
-#home_area {
-  width: 1000px;
-  margin: 0 auto;
-  height: 780px;
-  background: green;
+#home_area .gg {
+  width: 100%;
+  height: 111px;
+  border: 1px solid #eaeaea;
+  background-color: #fff;
+  position: relative;
+}
+#home_area .gg:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#home_area .gg span {
+  width: 96px;
+  text-align: left;
+  line-height: 111px;
+  display: block;
+  float: left;
+  color: #333333;
+  font-size: 16px;
+  padding-left: 30px;
+}
+#home_area .gg ul {
+  list-style: none;
+  float: left;
+  margin: 15px 0;
+  width: 860px;
+}
+#home_area .gg ul li {
+  float: left;
+  padding: 0 7px;
+  height: 80px;
+  display: block;
+  width: 80px;
+  overflow: hidden;
+}
+#home_area .gg ul li img {
+  width: 100%;
 }
 
 /*家电数码*/
-#household_area {
-  width: 1000px;
-  margin: 0 auto;
-  height: 780px;
-  background: blueviolet;
+#household_area .gg {
+  width: 100%;
+  height: 111px;
+  border: 1px solid #eaeaea;
+  background-color: #fff;
+  position: relative;
+}
+#household_area .gg:after {
+  content: " ";
+  display: table;
+  clear: both;
+}
+#household_area .gg span {
+  width: 96px;
+  text-align: left;
+  line-height: 111px;
+  display: block;
+  float: left;
+  color: #333333;
+  font-size: 16px;
+  padding-left: 30px;
+}
+#household_area .gg ul {
+  list-style: none;
+  float: left;
+  margin: 15px 0;
+  width: 860px;
+}
+#household_area .gg ul li {
+  float: left;
+  padding: 0 7px;
+  height: 80px;
+  display: block;
+  width: 80px;
+  overflow: hidden;
+}
+#household_area .gg ul li img {
+  width: 100%;
 }
 
 /*侧边栏*/
@@ -819,9 +1502,10 @@
   top: 0px;
   width: 100%;
   left: 0;
-  height: 52px;
+  height: 0px;
   background: url(../images/search_fixed_bg.png) repeat 0 0;
-  display: block;
+  z-index: 51;
+  overflow: hidden;
 }
 #top .w1000 {
   width: 1000px;
@@ -863,6 +1547,7 @@
 
 /*左侧楼梯*/
 #left_slider {
+  display: none;
   color: #000;
   text-align: center;
   position: fixed;
@@ -885,12 +1570,12 @@
 }
 #left_slider ul li {
   float: left;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   border-bottom: 1px solid #e5e5e5;
   height: 23px;
   line-height: 23px;
   cursor: pointer;
-  padding-bottom: 10px;
+  padding-right: 5px;
 }
 #left_slider ul li i {
   vertical-align: middle;
@@ -899,6 +1584,11 @@
   background: url(../images/type_icon.png) no-repeat 0 0;
   width: 18px;
   height: 18px;
+}
+#left_slider ul .active {
+  background-color: #c4193f;
+  border-radius: 5px;
+  color: #fff;
 }
 
 #footer {

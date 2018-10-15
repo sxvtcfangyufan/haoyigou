@@ -4,9 +4,13 @@
 		<div class="w1000">
 			<div class="header_top_left">
 				<span>欢迎来到欢乐购!</span>
-				<a href="" class="login">[登录]</a>
+				<a href="http://10.31.162.71/haoyigou/src/login.html" class="login">[登录]</a>
 				<span class="line">|</span>
-				<a href="" class="register">[注册]</a>
+				<a href="http://10.31.162.71/haoyigou/src/registor.html" class="register">[注册]</a>
+			</div>
+			<div class="header_top_hide" style="display: none" >
+				<span></span>,欢迎光临本商场!
+				<a href="javascript:;">退出</a>
 			</div>
 			<div class="header_top_right">
 				<ul>
@@ -16,11 +20,11 @@
 						<a href="">订单查询</a><span class="line"></span></li>
 					<li>
 						<a href="">我的欢乐购</a><span class="line"></span></li>
-					<li><i class="">电话</i><span style="margin-right: 10px;">400-705-1111</span><span class="line"></span></li>
+					<li><i class="tel_icon"></i><span style="margin-right: 10px;">400-705-1111</span><span class="line"></span></li>
 					<li>
 						<a href="">下载欢乐购</a><span class="line"></span></li>
 					<li>
-						<a href="">客服中心</a><i class="">箭头</i><span class="line"></span></li>
+						<a href="">客服中心</a><i class="i_down"></i></li>
 				</ul>
 			</div>
 		</div>
@@ -35,8 +39,9 @@
 		</div>
 		<div class="search">
 			<div class="s_input">
-				<input type="text" class="sch" />
+				<input type="text" class="sch" id="qbz" value="" />
 				<input type="button" class="btn" value="搜索" />
+				<ul></ul>
 			</div>
 			<div class="keyword">
 				<ul>
@@ -56,9 +61,9 @@
 		</div>
 		<div class="gwc">
 			<a href="#" class="car">
-				<b></b>
+				<b class="b1"></b>
 				<span>我的购物车</span>
-				<b></b>
+				<b class="b2"></b>
 			</a>
 			<div class="list"></div>
 		</div>
@@ -114,7 +119,7 @@
 					</div>
 				</li>
 				<li>
-					<a href="">首页</a>
+					<a href="index.html">首页</a>
 				</li>
 				<li>
 					<a href="">TV直播</a>
@@ -129,3 +134,23 @@
 		</div>
 	</div>
 </div>
+<script type="text/javascript" src="script/thirdplugins/cookie.js"></script>
+<script src="script/thirdplugins/require.js" type="text/javascript"  defer async="true" data-main="script/js/main.js"></script>
+	<script type="text/javascript">
+		var admin=document.querySelector('.header_top_left');
+		var login=document.querySelector('.header_top_hide');
+		var oSpan=document.querySelector('.header_top_hide span');
+		var close=document.querySelector('.header_top_hide a');
+		if(getcookie('username')){			
+			admin.style.display='none';
+			oSpan.innerHTML=getcookie('username');
+			oSpan.style.cssText='font-size: 16px;color: red;';
+			login.style.display = 'block';
+			
+		}
+		close.onclick=function(){
+			delcookie('username');
+			admin.style.display='block';
+			login.style.display = 'none';
+		}
+	</script>
